@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="http://www.crimea.edu/favicon.ico">
+	<meta charset=utf-8>
+	<meta name="description" content="[ПЕСОЧНИЦА] Страница физико-технического института Крымского федерального университета им. В.И. Вернадского" />
+	<meta name="keywords" content="ТНУ, учеба, наука, инновации, институт, университет, вуз, факультет, кафедра, ректорат, департамент, студгородок, поступление, прием, студент, аспирант, докторант, бакалавр, магистр, специалист, преподаватель, ученый, уровни подготовки, дневная, заочная, экстернат, аспирантура, докторантура, вторая, параллельная, дистанционная, образование, аттестация, диплом, учебный процесс, расписание пар, семинар, лекция, симпозиум, мониторинг, исследование, научные издания, новости, конференция, nye" />
+	<meta name="author" content="Contributors">
+	<title>Физико-технический институт | ФГАОУ ВО "КФУ им. В. И. Вернадского"</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="html2canvas.js"></script>
+ 	<script type="text/javascript">
+ 		$(function() {
+ $(window).scroll(function() {
+ if($(this).scrollTop() > 400) {
+ $('#toTop').fadeIn();
+ } else {
+ $('#toTop').fadeOut();
+ }
+ });
+ $('#toTop').click(function() {
+ $('body,html').animate({scrollTop:0},400);
+ });
+ });
+ $(document).ready(function() {
+                $('#report_bug').live('click',function(){
+                    if (confirm("Нажимая \"ОК\", Вы разрешаете отправку снимка текущей страницы администраторам сайта Физико-технического института ФГАОУ ВО \"КФУ им. В.И.Вернадского.\"")) {
+						setTimeout("makeIT()", 1000);
+					}
+                });
+            });
+            function makeIT()
+            {
+                html2canvas(document.body, {
+      			onrendered: function(canvas) {
+              
+                var data = canvas.toDataURL('image/png').replace(/data:image\/png;base64,/, '');
+               	$('canvas').remove();
+                $.post('saveCPic.php',{data:data}, function(rep){
+                     alert(' Изображение доступно по ссылке ' + rep);
+                });
+      }
+    });                
+            }
+</script>
+</head>
+<body>
+	<header>
+		<div class="logo">
+		<img src="logo.jpg" alt="ФТИ" style="vertical-align: middle; width: 100px; height: 100px; padding-right:-1.5em; display: inline-block;">
+		<h1><a href="/">Физико-технический институт<br>ФГАОУ ВО "КФУ им. В. И. Вернадского"</a></h1>
+		</div>
+			<form action="http://www.google.com/cse" id="cse-search-box" class="search-wrapper cf" target="_blank">
+				<input maxlength="160" size="16" name="q" type="text" placeholder="Введите запрос..." />
+				<button name="sa" type="submit">Поиск</button>
+				<input name="cx" value="012882630004809392221:7vi4kh_ya30" type="hidden" />
+				<input name="ie" value="UTF-8" type="hidden" />
+			</form>
+	</header>
+	<nav>
+	<ul class="nav">
+		<li>
+			<a href="#">Институт</a>
+			<div>
+				<div class="nav-column">
+					<h3>Институт</h3>
+					<a href="?p=about">Об институте</a>
+					<a href="?p=staff-full">Персональные страницы</a>
+					<a href="?p=contacts">Контактная информация</a>
+					<a href="?p=maps">Карта объектов института</a>
+					<a href="?p=feedback">Обратная связь</a>
+				</div>
+				<div class="nav-column">
+					<h3 class="orange">Кафедры</h3>
+					<a href="?p=computer-engineering-modeling">Компьютерной инженерии и моделирования</a>
+					<a href="?p=med-phys-inform">Медицинской физики и информатики</a>
+					<a href="?p=general-physics">Общей физики</a>
+					<a href="?p=radio">Радиофизики и электроники</a>
+					<a href="?p=theoretical-physics">Теоретической физики и физики твердого тела</a>
+					<a href="?p=experimental-physics">Экспериментальной физики</a>
+					<a href="?p=energy-physics">Электроснабжения и физики</a>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a href="#">Обучение в институте</a>
+			<div>
+				<div class="nav-column">
+					<h3 class="orange">Абитуриенту</h3>
+					<a href="?p=enrollee">Абитуриенту</a>
+					<h3 class="orange">Сайты КФУ для абитуриента</h3>
+					<a href="http://www.cfuv.ru/priemnaya-komissiya" target="_blank">Приемная комиссия</a>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a href="#">Учебная работа</a>
+			<div>
+				<div class="nav-column">
+					<h3 class="orange">Преподавателям</h3>
+					<a href="">Расписание занятий</a>
+					<h3 class="orange">Название</h3>
+					<a href="">Название</a>
+				</div>
+				<div class="nav-column">
+					<h3>Студентам</h3>
+					<a href="">Расписание занятий</a>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a href="#">Образование &amp; Исследования</a>
+			<div>
+				<div class="nav-column">
+					<h3 class="orange">Наука</h3>
+					<a href="?p=student-design-bureau">Статьи и публикации</a>
+					<a href="?p=student-design-bureau">Монографии</a>
+					<a href="?p=student-design-bureau">Магистерские диссертации</a>
+					<h3 class="orange">Наука &amp; студенты</h3>
+					<a href="?p=student-design-bureau">Студенческое конструкторское бюро</a>
+				</div>
+				<div class="nav-column">
+					<h3>Ссылки на сайты кафедр института</h3>
+					<a href="http://www.vortex.crimea.edu/" target="_blank">Сайт кафедры общей физики</a>
+					<a href="http://kimkfu.ru/" target="_blank">Сайт кафедры компьютерной инженерии и моделирования</a>
+					<a href="http://physkss.crimea.edu/" target="_blank">Сайт кафедры радиофизики и электроники</a>
+				</div>
+			</div>
+		</li>
+		<li>
+			<a href="#">Life @ ФТИ</a>
+			<div>
+				<div class="nav-column">
+					<h3 class="orange">Мероприятия</h3>
+					<a href="?p=arts">Искусство</a>
+					<a href="?p=sport">Спорт</a>
+					<a href="?p=sport">Социальные проекты</a>
+				</div>
+				<div class="nav-column">
+					<h3>Студенческое самоуправление</h3>
+					<a href="http://vk.com/physic_studsovet" target="_blank">Группа ВКонтакте</a>
+				</div>
+			</div>
+		</li>
+		<!--<li><a href="#">Rings</a></li>-->
+	</ul>
+	</nav>
+	<article>

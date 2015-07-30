@@ -1,0 +1,344 @@
+/* http://codepen.io/siwicki/pen/FHkwu */
+@import "searchform.css";
+/* http://designmodo.com/create-css3-mega-menu/ */
+@import "menu.css";
+/* Шрифт заголовка */
+/*@import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic);
+*/
+@import url(http://fonts.googleapis.com/css?family=Jura&subset=latin,cyrillic);
+/* Шрифт основной части */
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
+/* Шрифт подвала */
+@import url(http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic);
+body {
+	 padding: 0;
+	max-width: 1024px;
+
+	margin: 0 auto; /* сайт располагается по центру экрана */
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	/*background-image: url("http://s3-us-west-1.amazonaws.com/www-prod-storage.cloud.caltech.edu/backgrounds/SIP-Large-Background-Option-01-flip.jpg");
+	    background-size: cover;
+	    background-repeat: no-repeat;*/
+}
+
+header {
+	display: flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:center;
+	padding: 1em;
+	background: white;
+}
+
+.departments {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 0em 1em 0em 1em;
+}
+.departments .block2 {
+	text-align: justify;
+}
+.departments .block2 img {
+	padding: 0.7em 0 0.7em 1em;
+}
+.departments > .block2 > p {
+	text-indent: 2em; /* Отступ первой строки */
+	margin: 0.5em 0em 0em 0em;
+}
+
+header > div > h1 { 
+	-moz-user-select: -moz-none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
+   	-ms-user-select: none;
+   	user-select: none;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	display: inline-block;
+	vertical-align: middle;
+	font-family: 'Jura', sans-serif;
+	font-size: 2em;
+}
+header > div > h1 > a {
+	color: black;
+	text-decoration: none;
+}
+
+header > form {
+	display: block;
+}
+
+article h2 {
+	border-bottom-color: #D5D0C0;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	color: #696969;
+	display: block;
+	font-family: Arial,sans-serif;
+	font-size: 1.2em;
+	line-height: 2em;
+
+/*	margin: 1em;*/
+}
+.events h2 {
+	background-color: #1B59C6;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	border-bottom: none;
+	letter-spacing: 0.1em;
+}
+nav { 
+	background: #1B59C6;
+	height: 46px;
+}
+
+article { 
+	font-family: 'PT Sans', sans-serif;
+	color: #696969;
+	padding: 1em 1.2em;
+	background: white;
+}
+
+article #picture {
+	position: relative;
+	background: url('http://www.crimea.edu/diz/images/pic-1.jpg') no-repeat;
+	background-size: cover;
+	padding-top: 48.11%;
+/*	margin: 1em; */
+}
+
+article #picture > div {
+	background-color: #F2F1EB;
+	opacity: 0.9;
+	position: absolute;
+	bottom:2em;
+	right:2em;
+	padding: 1em;
+	width: 30%;
+	text-align: justify;
+}
+
+.popular {
+	display: flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:baseline;
+}
+
+.popular a { 
+	width: 23%;
+	display: block;
+	text-align: justify;
+	color: #696969;
+	text-decoration: none;
+	padding: 0.8em;
+}
+
+.popular a:hover {
+	text-decoration: underline;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.popular a img {
+	width: 100%;
+	/*height: auto;*/
+	height: 150px;
+	text-align: left;
+}
+
+.popular a h4 {
+	margin: 0.2em 0 0.2em 0;
+}
+
+.media_containers {
+	display: flex;
+	flex-direction:row;
+	justify-content:space-around;
+	align-items:flex-start; 
+}
+
+article .events {
+	display: flex;
+	flex-direction:row;
+	justify-content:space-between;
+	align-items:flex-start;
+}
+
+article .events .annonce {
+margin-right: 2%;
+min-width: 31%;
+}
+
+article .events .news {
+margin-right: 2%;
+}
+
+.event {
+	display: inline-table;
+    border-bottom: 1px solid #C8C8C8; /* Параметры линии внизу */
+    padding-bottom: 0.3em;
+}
+
+/* форматирование даты события */
+.event div:first-child {
+	min-width: 1.75em;
+	display: table-cell;
+	text-align: center;
+	padding: 0.5em;
+	font-weight: 500;
+	font-size: 1.2em;
+	color: #820000;
+}
+
+/* форматирование даты события: месяц */
+.event div:first-child:first-line {
+	font-weight: 500;
+	font-size: 0.8em;
+	color: #696969;
+}
+
+.event-text {
+	display: table-cell;
+	text-align: justify;
+	font-size: 0.8em;
+
+}
+
+.event-text a {
+	font-size: 1.2em;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0;
+}
+
+.event-text p { 
+	margin-top: 0.6em;
+	font-weight: 800;
+	font-size: 0.8em;
+}
+
+footer {
+	display: flex;
+	flex-direction:row;
+	justify-content:space-around;
+	align-items:center;
+	color: white;
+	background-color: #1B59C6; 
+}
+
+footer h2 {
+	font-family: 'Jura', sans-serif;
+	font-size: 2em;
+}
+
+article { 
+	/*background: url('http://www.crimea.edu/diz/images/gerb-tnu.jpg') no-repeat bottom right;
+	background-size: 50%;*/
+}
+
+footer .bottom-logo {
+	display: inline-block;
+	margin-left: 2em;
+}
+
+footer .bottom-links {
+	display: inline-block;
+	margin: 1em 0em 1em 2.5em;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 0.8em;
+}
+
+footer .bottom-links a {
+	color: white;
+	font-size: 1.3em;
+	margin-right: 0.8em;
+	margin-bottom: 0.5em;
+	display: inline-block;
+}
+footer .social a {	width: 32px;
+	height: 32px;
+}
+footer .social img {
+	height: 32px;
+	width: 32px;
+	vertical-align: middle;
+	margin: 0em 0.5em 0em 0.5em;
+}
+footer a:hover { 
+	text-decoration: none;
+	border-bottom: 1px dashed;
+	height: 1.15em;
+}
+
+footer span { 
+	font-size: 0.8em;
+	margin-top: 0.4em;
+	margin-left: 1.3em;
+}
+
+.smallico {
+	width: 16px;
+	height: 16px;
+	margin: 0em;
+	margin-bottom: 1px;
+	margin-right: 2px;
+	padding: 0em !important;
+	vertical-align: middle;
+	
+}
+#toTop {
+-moz-user-select: -moz-none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
+   	-ms-user-select: none;
+   	user-select: none;
+width:100px;
+border:1px dashed #ccc;
+background:#f7f7f7;
+text-align:center;
+padding:5px;
+position:fixed;
+top:15px; /* отступ кнопки от нижнего края страницы*/
+right:15px;
+cursor:pointer;
+display:none;
+color:#333;
+font-family:verdana;
+font-size:11px;
+z-index: 510;
+}
+#report_bug {
+z-index: 520;
+-moz-user-select: -moz-none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
+   	-ms-user-select: none;
+   	user-select: none;
+width:400px;
+border:1px dashed #ccc;
+background:#f7f7f7;
+text-align:center;
+padding:5px;
+position:fixed;
+top:2px; /* отступ кнопки от нижнего края страницы*/
+right:50%;
+margin-right: -200px;
+cursor:pointer;
+/*display:none;*/
+color:#333;
+color:red;
+font-family:verdana;
+font-size:11px;
+}
+article a[href^="http://"]:not([href*="dmitry.tsapik.tk"])::after, .nav a[href^="http://"]:not([href*="dmitry.tsapik.tk"])::after {
+margin-left: 2px;
+content: url("external.svg");
+}
+article a[href^="https://"]:not([href*="dmitry.tsapik.tk"])::after {
+margin-left: 2px;
+content: url("external.svg");
+}
