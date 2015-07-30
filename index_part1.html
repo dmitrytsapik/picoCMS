@@ -4,46 +4,44 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="icon" href="http://www.crimea.edu/favicon.ico">
 	<meta charset=utf-8>
-	<meta name="description" content="[ПЕСОЧНИЦА] Страница физико-технического института Крымского федерального университета им. В.И. Вернадского" />
-	<meta name="keywords" content="ТНУ, учеба, наука, инновации, институт, университет, вуз, факультет, кафедра, ректорат, департамент, студгородок, поступление, прием, студент, аспирант, докторант, бакалавр, магистр, специалист, преподаватель, ученый, уровни подготовки, дневная, заочная, экстернат, аспирантура, докторантура, вторая, параллельная, дистанционная, образование, аттестация, диплом, учебный процесс, расписание пар, семинар, лекция, симпозиум, мониторинг, исследование, научные издания, новости, конференция, nye" />
+	<meta name="description" content="Сайт Физико-технического института Крымского федерального университета им. В.И. Вернадского" />
+	<meta name="keywords" content="Симферополь, Республика Крым, кфу, тну, учеба, наука, инновации, институт, кафедра, студгородок, поступление, прием, студент, аспирант, докторант, бакалавр, магистр, специалист, преподаватель, ученый, уровни подготовки, дневная, заочная, экстернат, аспирантура, докторантура, вторая, параллельная, дистанционная, образование, аттестация, диплом, учебный процесс, расписание пар, семинар, лекция, симпозиум, мониторинг, исследование, научные издания, новости, конференция, phystech, crimea, nye, rae" />
 	<meta name="author" content="Contributors">
 	<title>Физико-технический институт | ФГАОУ ВО "КФУ им. В. И. Вернадского"</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script src="html2canvas.js"></script>
  	<script type="text/javascript">
  		$(function() {
- $(window).scroll(function() {
- if($(this).scrollTop() > 400) {
- $('#toTop').fadeIn();
- } else {
- $('#toTop').fadeOut();
- }
- });
- $('#toTop').click(function() {
- $('body,html').animate({scrollTop:0},400);
- });
- });
- $(document).ready(function() {
-                $('#report_bug').live('click',function(){
-                    if (confirm("Нажимая \"ОК\", Вы разрешаете отправку снимка текущей страницы администраторам сайта Физико-технического института ФГАОУ ВО \"КФУ им. В.И.Вернадского.\"")) {
+ 			$(window).scroll(function() {
+ 				if($(this).scrollTop() > 400) {
+ 					$('#toTop').fadeIn();
+ 				} else {
+ 				$('#toTop').fadeOut();
+ 				}
+ 			});
+ 			$('#toTop').click(function() {
+ 				$('body,html').animate({scrollTop:0},400);
+ 			});
+ 		});
+ 		$(document).ready(function() {
+            $('#report_bug').live('click',function(){
+                if (confirm("Нажимая \"ОК\", Вы разрешаете отправку снимка текущей страницы администраторам сайта Физико-технического института ФГАОУ ВО \"КФУ им. В.И.Вернадского.\"")) {
 						setTimeout("makeIT()", 1000);
 					}
                 });
-            });
-            function makeIT()
-            {
-                html2canvas(document.body, {
+        });
+        function makeIT(){
+            html2canvas(document.body, {
       			onrendered: function(canvas) {
-              
                 var data = canvas.toDataURL('image/png').replace(/data:image\/png;base64,/, '');
                	$('canvas').remove();
                 $.post('saveCPic.php',{data:data}, function(rep){
                      alert(' Изображение доступно по ссылке ' + rep);
                 });
-      }
-    });                
-            }
-</script>
+      		}
+    	});                
+        }
+	</script>
 </head>
 <body>
 	<header>
