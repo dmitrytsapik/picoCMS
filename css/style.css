@@ -10,10 +10,10 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
 /* Шрифт подвала */
 @import url(http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic);
-body {
-	 padding: 0;
-	max-width: 1024px;
 
+body {
+	padding: 0;
+	max-width: 1024px;
 	margin: 0 auto; /* сайт располагается по центру экрана */
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	/*background-image: url("http://s3-us-west-1.amazonaws.com/www-prod-storage.cloud.caltech.edu/backgrounds/SIP-Large-Background-Option-01-flip.jpg");
@@ -336,9 +336,9 @@ font-size:11px;
 }
 article a[href^="http://"]:not([href*="dmitry.tsapik.tk"])::after, .nav a[href^="http://"]:not([href*="dmitry.tsapik.tk"])::after {
 margin-left: 2px;
-content: url("external.svg");
+content: url("/images/external.svg");
 }
 article a[href^="https://"]:not([href*="dmitry.tsapik.tk"])::after {
 margin-left: 2px;
-content: url("external.svg");
+content: url("/images/external.svg");
 }

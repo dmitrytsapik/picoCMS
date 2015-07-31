@@ -1,1 +1,4 @@
-ErrorDocument 404 /404.php
+# запрет просмотра каталогов
+Options -Indexes
+ErrorDocument 404 /errordocs/404.php
+ErrorDocument 403 /errordocs/403.php
