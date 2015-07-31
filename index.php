@@ -1,5 +1,8 @@
 <?php
-	include("index_part1.html");
+	include "main/header.html";
+    echo "\n";
+    include "main/menu.html";
+    echo "\n   <article>\n";
     if((isset($_GET["p"]) ? $_GET["p"] : '')) {
         $p_query = $_GET["p"];
         $files = scandir("pages/");
@@ -34,7 +37,8 @@
 	} 
 	else
 	{
-		include("index_main.html");
+		include("main/main.html");
 	}
-	include("index_part2.html");
+    echo "      </article>\n";
+	include("main/footer.html");
 ?>

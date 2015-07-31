@@ -1,5 +1,9 @@
 <?php
-	include("../index_part1.html");
+	include "../main/header.html";
+    echo "\n";
+    include "../main/menu.html";
+    echo "\n   <article>\n";
     echo "<h1>404 &mdash; запрашиваемый документ не найден</h1>";
-   	include("../index_part2.html");
+   	echo "      </article>\n";
+	include("../main/footer.html");
 ?>

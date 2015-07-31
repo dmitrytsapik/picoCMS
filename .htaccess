@@ -1,4 +1,7 @@
 # запрет просмотра каталогов
 Options -Indexes
+<Files admin/.htpasswd>
+   deny from all
+</Files>
 ErrorDocument 404 /errordocs/404.php
 ErrorDocument 403 /errordocs/403.php
