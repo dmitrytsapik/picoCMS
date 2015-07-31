@@ -1,5 +1,39 @@
 <?php
-	include "main/header.html";
+	function do_events($dir_event) {
+        $files = scandir($dir_event);
+            unset($files[0], $files[1]);
+            asort($files);
+            $files = array_values($files);
+            for ($i=$files[count($files)-1]; $i >= 0; $i--) { 
+                if (!file_exists($dir_event . $i)) continue;
+                $counter = 0;
+                $handle = fopen($dir_event . $i, "r");
+                if ($handle) {
+                echo "<div class=\"event\">\n";
+                while (($buffer = fgets($handle)) !== false) {
+                switch ($counter) {
+                    case 0:
+                        echo "<div>" . $buffer . "</div>\n";
+                        break;
+                    
+                    case 1:
+                        echo "<div class=\"event-text\">\n" . $buffer;
+                        break;
+                    case 2:
+                        echo "<p>" . $buffer . "</p>";
+                        break;
+                }
+                $counter++;
+                }
+                /*if (!feof($handle)) {
+                echo "Error: unexpected fgets() fail\n";
+                }*/
+                fclose($handle);
+                echo "</div>\n</div>\n";
+            }
+            }
+    }
+    include "main/header.html";
     echo "\n";
     include "main/menu.html";
     echo "\n   <article>\n";
