@@ -2,12 +2,12 @@
 	function do_events($dir_event) {
         $files = scandir($dir_event);
             unset($files[0], $files[1]);
-            asort($files);
+            arsort($files);
             $files = array_values($files);
-            for ($i=$files[count($files)-1]; $i >= 0; $i--) { 
-                if (!file_exists($dir_event . $i)) continue;
+            foreach($files as $event) { 
+                if (!file_exists($dir_event . $event)) continue;
                 $counter = 0;
-                $handle = fopen($dir_event . $i, "r");
+                $handle = fopen($dir_event . $event, "r");
                 if ($handle) {
                 echo "<div class=\"event\">\n";
                 while (($buffer = fgets($handle)) !== false) {

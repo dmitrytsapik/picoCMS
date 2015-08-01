@@ -3,24 +3,15 @@
 			<div style="text-align:right;"><i>В.И. Вернадский (1863-1945)</i></div>
 		</div></div>
 		<div class="events">
-			<div class="annonce">
-				<h2>Анонс</h2>
-				<?php
-				do_events("content/annonce/");
-				?>
-			</div>
-			<div class="news">
-				<h2>Новости кафедр</h2>
-				<?php
-				do_events("content/news/");
-				?>
-			</div>
-			<div class="news_deps">
-				<h2>Объявления</h2>
-				<?php
-				do_events("content/news_deps/");
-				?>	
-			</div>
+			<?php 
+			$loc_dir = [["annonce", "Анонс"], ["news", "Новости кафедр"], ["news_deps", "Объявления"]];
+			foreach ($loc_dir as $category) {
+				echo "\n<div class=\"" . $category[0] . "\">
+					  \n<h2>" . $category[1] ."</h2>";
+					  do_events("content/". $category[0] ."/");
+				echo "</div>";
+			}
+			?>
 		</div>
 		<h2>Новые статьи Физико-технического института</h2>
 		<div class="popular">
