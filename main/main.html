@@ -4,7 +4,7 @@
 		</div></div>
 		<div class="events">
 			<?php 
-			$loc_dir = [["annonce", "Анонс"], ["news", "Новости кафедр"], ["news_deps", "Объявления"]];
+			$loc_dir = array(array("annonce", "Анонс"), array("news", "Новости кафедр"), array("news_deps", "Объявления"));
 			foreach ($loc_dir as $category) {
 				echo "\n<div class=\"" . $category[0] . "\">
 					  \n<h2>" . $category[1] ."</h2>";
