@@ -5,3 +5,4 @@ Options -Indexes
 </Files>
 ErrorDocument 404 /errordocs/404.php
 ErrorDocument 403 /errordocs/403.php
+ErrorDocument 401 /
