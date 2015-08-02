@@ -15,7 +15,6 @@
                     case 0:
                         echo "<div>" . $buffer . "</div>\n";
                         break;
-                    
                     case 1:
                         echo "<div class=\"event-text\">\n" . $buffer;
                         break;
@@ -43,7 +42,6 @@
                 $counter = 0;
                 $handle = fopen("content/popular/" . $event, "r");
                 if ($handle) {
-                //echo "<div class=\"event\">\n";
                 while (($buffer = fgets($handle)) !== false) {
                 $buffer_short = substr($buffer, 0, -2);
                 switch ($counter) {
@@ -65,11 +63,7 @@
                 }
                 $counter++;
                 }
-                /*if (!feof($handle)) {
-                echo "Error: unexpected fgets() fail\n";
-                }*/
                 fclose($handle);
-                //echo "</div>\n</div>\n";
             }
             }
     }
