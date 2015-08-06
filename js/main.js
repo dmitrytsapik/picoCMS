@@ -6,12 +6,12 @@ $(function() {
 			$('#toTop').fadeOut();
 		}
 	});
-	$('#toTop').click(function() {
+$('#toTop').click(function() {
 		$('body,html').animate({scrollTop:0},400);
 	});
 });
 $(document).ready(function() {
-  $('#report_bug').live('click',function(){
+  $('#report_bug').click(function(){
     if (confirm("Нажимая \"ОК\", Вы разрешаете отправку снимка текущей страницы администраторам сайта Физико-технического института ФГАОУ ВО \"КФУ им. В.И.Вернадского.\"")) {
 			setTimeout("makeIT()", 1000);
 		}

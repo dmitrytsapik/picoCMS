@@ -155,10 +155,14 @@ article #picture > div {
 }
 
 .media_containers {
-	display: flex;
-	flex-direction:row;
-	justify-content:space-around;
-	align-items:flex-start; 
+	text-align: center;
+}
+.youtube {
+	display: inline-block;
+	width: 450px;
+	height: 345px;
+	border:none;
+	margin: auto 1em;
 }
 
 article .events {
