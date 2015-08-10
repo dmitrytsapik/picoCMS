@@ -1,4 +1,5 @@
 # запрет просмотра каталогов
+AddDefaultCharset UTF-8
 Options -Indexes
 <Files admin/.htpasswd>
    deny from all
