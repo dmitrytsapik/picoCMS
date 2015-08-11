@@ -2,7 +2,7 @@
 
 if(isset($_FILES["FileInput"]) && $_FILES["FileInput"]["error"]== UPLOAD_ERR_OK)
 {
-	$UploadDirectory	= '../../uploads/'; //specify upload directory ends with / (slash)
+	$UploadDirectory	= '../uploads/'; //specify upload directory ends with / (slash)
 	
 	/*
 	Note : You will run into errors or blank page if "memory_limit" or "upload_max_filesize" is set to low in "php.ini". 
