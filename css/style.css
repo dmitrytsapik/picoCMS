@@ -39,6 +39,7 @@ header {
 }
 .departments .block2 {
 	text-align: justify;
+	min-width: 800px;
 }
 .departments .block2 img {
 	padding: 0.7em 0 0.7em 1em;

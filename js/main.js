@@ -16,13 +16,17 @@ $(document).ready(function() {
 			setTimeout("makeIT()", 1000);
 		}
   });
+  $.get("/vk_parser.php", function( data ) {
+  //$( ".result" ).html( data );
+  //alert( "Load was performed." );
+}).delay(100);
 });
 function makeIT(){
   html2canvas(document.body, {
 	 onrendered: function(canvas) {
    var data = canvas.toDataURL('image/png').replace(/data:image\/png;base64,/, '');
    $('canvas').remove();
-   $.post('saveCPic.php',{data:data}, function(rep){
+   $.post('/saveCPic.php',{data:data}, function(rep){
     alert(' Изображение доступно по ссылке ' + rep);
    });
    }

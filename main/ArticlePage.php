@@ -11,7 +11,7 @@ class ArticlePage extends Page_Template {
                     echo "<div class=\"departments\">"."<div style=\"padding-right: 2em;\">".
                          file_get_contents("pages/" . $word . "/menu.html") .
                          "</div>" .
-                         "<div class=\"block2\" style=\"min-width: 700px\">" .
+                         "<div class=\"block2\">" .
                          file_get_contents("pages/" . $word . "/index.html") .
                          "</div></div>";
                     break;
@@ -23,7 +23,7 @@ class ArticlePage extends Page_Template {
                     echo "<div class=\"departments\">"."<div style=\"padding-right: 2em;\">".
                          file_get_contents("pages/" . $word . "/menu.html") .
                          "</div>" .
-                         "<div class=\"block2\" style=\"min-width: 700px\">" .
+                         "<div class=\"block2\">" .
                          file_get_contents("pages/" . $word . "/" . $q_file . ".html") .
                          "</div></div>";
                     break;

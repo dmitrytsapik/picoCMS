@@ -48,13 +48,11 @@ if(isset($_FILES["FileInput"]) && $_FILES["FileInput"]["error"]== UPLOAD_ERR_OK)
 	
 	if(move_uploaded_file($_FILES['FileInput']['tmp_name'], $UploadDirectory.$NewFileName ))
 	   {
-		die('Success! File Uploaded.');
+		die('Ваш файл доступен по ссылке: http://' . $_SERVER['SERVER_NAME'] . '/uploads/' . $NewFileName);
 	}else{
 		die('error uploading File!');
 	}
 	
-}
-else
-{
-	die('Something wrong with upload! Is "upload_max_filesize" set correctly?');
+} else {
+	die("Ошибка загрузки!");
 }

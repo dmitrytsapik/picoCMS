@@ -1,7 +1,7 @@
 <?php
 abstract class Page_Template {
-    const top_button = "<div id=\"toTop\">&uarr; наверх </div>";
-    const reporting_button = "<div id=\"report_bug\">Ошибка в отображении сайта? - Жмите сюда!</div>"; 
+    const top_button = "<div id=\"toTop\">&uarr; НАВЕРХ </div>";
+    const reporting_button = "";// = "<div id=\"report_bug\">Ошибка в отображении сайта? - Жмите сюда!</div>"; 
     protected function Header_Page() {
         echo file_get_contents("main/header.html") .
              "\n" . file_get_contents("main/menu.html") .
