@@ -112,15 +112,27 @@ article #picture {
 /*	margin: 1em; */
 }
 
-article #picture > div {
+article #picture > div:first-child {
 	background-color: #F2F1EB;
 	opacity: 0.9;
 	position: absolute;
 	bottom:2em;
 	right:2em;
 	padding: 1em;
-	width: 30%;
+	width: 35%;
 	text-align: justify;
+}
+article #picture > div:last-child {
+	background-color: #F2F1EB;
+	opacity: 0.9;
+	position: absolute;
+	top:1em;
+	left: 3%;
+	padding: 0.3em 0;
+	text-align: center;
+	font-size: 2em;
+	color: black;
+	width: 94%;
 }
 
 .popular {
@@ -175,11 +187,12 @@ article .events {
 
 article .events .annonce {
 margin-right: 2%;
-min-width: 31%;
+min-width: 30%;
 }
 
 article .events .news {
 margin-right: 2%;
+min-width: 30%;
 }
 
 .event {

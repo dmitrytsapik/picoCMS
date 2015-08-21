@@ -108,10 +108,10 @@ class MainPage extends Page_Template
                 echo "</div>";
             }
             echo "</div>\n";
-            echo "<h2>Новые статьи Физико-технического института</h2>
+            /*echo "<h2>Новые статьи Физико-технического института</h2>
                     <div class=\"popular\">";
             $this->do_popular();
-            echo "</div>";
+            echo "</div>";*/
         $this->youtube();    
         $this->Footer_Page();
     }
