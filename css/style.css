@@ -5,224 +5,249 @@
 /* Шрифт заголовка */
 /*@import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic);
 */
-@import url(http://fonts.googleapis.com/css?family=Jura&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Jura:500&subset=latin,cyrillic);
 /* Шрифт основной части */
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
 /* Шрифт подвала */
 @import url(http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic);
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic);
+
 body {
 	padding: 0;
-	max-width: 1024px;
-	margin: 0 auto; /* сайт располагается по центру экрана */
+	margin: 0;
+	width: 100%;
+	height: auto;
+	background-color: #999;
+	/*http://subtlepatterns.com/escheresque-dark/
+	background-color: #BCBDC1;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	/*background-image: url("http://s3-us-west-1.amazonaws.com/www-prod-storage.cloud.caltech.edu/backgrounds/SIP-Large-Background-Option-01-flip.jpg");
-	    background-size: cover;
-	    background-repeat: no-repeat;*/
+	background-image: url("http://s3-us-west-1.amazonaws.com/www-prod-storage.cloud.caltech.edu/backgrounds/SIP-Large-Background-Option-01-flip.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;*/
 }
 
+/* полоска логотипа */
+.hdr {
+	background-color: #1C2029;
+}
+/* меню, главная часть, шапка, подвал */
+nav, article, header, footer {
+	min-width: 900px;
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+}
+/* шапка */
 header {
 	display: flex;
 	flex-direction:row;
 	justify-content:space-between;
 	align-items:center;
-	padding: 1em;
-	background: white;
+	background-color: #1C2029;
 }
 
-.departments {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-start;
-	padding: 0em 1em 0em 1em;
-}
-.departments .block2 {
-	text-align: justify;
-	min-width: 800px;
-}
-.departments .block2 img {
-	padding: 0.7em 0 0.7em 1em;
-}
-.departments > .block2 > p {
-	text-indent: 2em; /* Отступ первой строки */
-	margin: 0.5em 0em 0em 0em;
-}
-
-header > div > h1 { 
+header > a {
+	margin: 1em;
+	text-decoration: none;
 	-moz-user-select: -moz-none;
    	-khtml-user-select: none;
    	-webkit-user-select: none;
    	-ms-user-select: none;
    	user-select: none;
-	padding: 0;
-	margin: 0;
-	font-weight: normal;
+}
+
+header > a > span { 
 	display: inline-block;
 	vertical-align: middle;
 	font-family: 'Jura', sans-serif;
-	font-size: 2em;
+	font-size: 1.2em;
+	margin-left: 0.6em;
+	color: white;
 }
-header > div > h1 > a {
-	color: black;
-	text-decoration: none;
+
+header > a > img { 
+	vertical-align: middle;
+	width: 60px;
+	height: 60px;
+	padding-right:-1.5em;
+	display: inline-block;
 }
 
 header > form {
 	display: block;
 }
 
+.departments {
+	display: table;
+	padding: 0em 1em 0em 0em;
+}
+.departments .menu, #sticky {
+	font-size: .9em;
+	font-family: 'Open Sans', sans-serif;
+	width: 17%;
+	padding-left: 2em;
+	line-height: 1em;
+	padding-right: 1em;
+	color: white;
+	background-color: #384668;
+}
+
+.departments .menu a, #sticky a {
+	color: white;
+	text-decoration: none;
+	font-family: Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.departments .menu {
+	display: table-cell;
+	border-right: 1px solid #E4E4E4;
+}
+
+.departments .menu a:hover, #sticky a:hover { 
+	text-decoration: none;
+	color: #FF4847;
+}
+
+#sticky {
+	padding-top: 1em;
+	position:fixed;
+	visibility: hidden;
+	z-index: 500;
+}
+
+.departments .entry {
+	padding-left: 1em;
+	display: table-cell;
+	text-align: justify;
+	min-width: 800px;
+	width: 85%;
+}
+.departments .entry img {
+	padding: 0.7em 0 0.7em 1em;
+}
+.departments > .entry > p {
+	text-indent: 2em; /* Отступ первой строки */
+	margin: 0.5em 0em 0em 0em;
+}
+
 article h2 {
 	border-bottom-color: #D5D0C0;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
-	color: #696969;
+	color: #444;
 	display: block;
-	font-family: Arial,sans-serif;
-	font-size: 1.2em;
-	line-height: 2em;
+	font-family: "PT Sans",sans-serif;
+	font-size: 1.3em;
+	line-height: 1.3em;
 
-/*	margin: 1em;*/
 }
-.events h2 {
-	background-color: #1B59C6;
-	color: white;
-	text-align: center;
+/* Названия: Анонс, новости кафедр, объявления*/
+#picture h2 {
+	color: #FF722B;
 	text-decoration: none;
 	border-bottom: none;
-	letter-spacing: 0.1em;
-}
-nav { 
-	background: #1B59C6;
-	height: 46px;
+	font-size: 1em;
+	font: 12px/1em Arial,Helvetica,sans-serif;
+	font-weight: 600;
+	margin-left: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 article { 
 	font-family: 'PT Sans', sans-serif;
-	color: #696969;
-	padding: 1em 1.2em;
+	color: #444444;
 	background: white;
 }
 
 article #picture {
 	position: relative;
-	background: url('http://www.crimea.edu/diz/images/pic-1.jpg') no-repeat;
+	background: url('/images/I8hWnVM3s6Y.jpg') no-repeat;
 	background-size: cover;
-	padding-top: 48.11%;
-/*	margin: 1em; */
-}
-
-article #picture > div:first-child {
-	background-color: #F2F1EB;
-	opacity: 0.9;
-	position: absolute;
-	bottom:2em;
-	right:2em;
-	padding: 1em;
-	width: 35%;
-	text-align: justify;
-}
-article #picture > div:last-child {
-	background-color: #F2F1EB;
-	opacity: 0.9;
-	position: absolute;
-	top:1em;
-	left: 3%;
-	padding: 0.3em 0;
-	text-align: center;
-	font-size: 2em;
-	color: black;
-	width: 94%;
-}
-
-.popular {
-	display: flex;
-	flex-direction:row;
-	justify-content:space-between;
-	align-items:baseline;
-}
-
-.popular a { 
-	width: 23%;
-	display: block;
-	text-align: justify;
-	color: #696969;
-	text-decoration: none;
-	padding: 0.8em;
-}
-
-.popular a:hover {
-	text-decoration: underline;
-	box-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
-.popular a img {
+	background-color: black;
+	height: 600px;
 	width: 100%;
-	/*height: auto;*/
-	height: 150px;
-	text-align: left;
+	padding: 0;
+	margin: 0;
+}
+article #picture a {
+	color: white;
+}
+article #picture > div {
+	background-color: rgba(56, 70, 104, 0.8);
+	position: absolute;
+	color: white;
+
 }
 
-.popular a h4 {
-	margin: 0.2em 0 0.2em 0;
+article #picture > div.about-picture {
+	bottom:2em;
+	left: 2em;
+	padding: 0.9em;
+	width: 35%;
+	font-size: 14px;
+	text-align: justify;
+}
+article #picture > div.annonce, article #picture > div.news_deps {
+	top: 2em;
+	font: 13px/1.2em Arial,Helvetica,sans-serif;
+	color: white;
+	padding: 0px 5px 5px 5px;
 }
 
-.media_containers {
+article #picture > div.annonce {
+	right:2em;
+	width: 25%;
+}
+
+article #picture > div.news_deps {
+	left:2em;
+	width: 25%;
+}
+
+article #picture > div.warning {
+	top: 10em;
+	left: 30%;
+	padding: 0.1em 0;
 	text-align: center;
-}
-.youtube {
-	display: inline-block;
-	width: 450px;
-	height: 345px;
-	border:none;
-	margin: auto 1em;
-}
-
-article .events {
-	display: flex;
-	flex-direction:row;
-	justify-content:space-between;
-	align-items:flex-start;
-}
-
-article .events .annonce {
-margin-right: 2%;
-min-width: 30%;
-}
-
-article .events .news {
-margin-right: 2%;
-min-width: 30%;
+	font-size: 0.8em;
+	width: 40%;
 }
 
 .event {
 	display: inline-table;
-    border-bottom: 1px solid #C8C8C8; /* Параметры линии внизу */
     padding-bottom: 0.3em;
 }
 
 /* форматирование даты события */
 .event div:first-child {
 	min-width: 1.75em;
-	display: table-cell;
 	text-align: center;
-	padding: 0.5em;
-	font-weight: 500;
-	font-size: 1.2em;
-	color: #820000;
+	padding: 0.2em 0.5em 0.5em 0.5em;
+	font-weight: 600;
+	font-size: 1.1em;
+	line-height: 1.1em;
+	color: #FF722B;
 }
 
 /* форматирование даты события: месяц */
 .event div:first-child:first-line {
 	font-weight: 500;
 	font-size: 0.8em;
-	color: #696969;
+	color: white;
+}
+.event div span {
+	font-weight: 500;
+	font-size: 0.8em;
+	color: white;
 }
 
 .event-text {
 	display: table-cell;
-	text-align: justify;
-	font-size: 0.8em;
+	text-align: left;
+	padding-right: 0.5em;
 
 }
 
@@ -242,30 +267,17 @@ min-width: 30%;
 footer {
 	display: flex;
 	flex-direction:row;
-	justify-content:space-around;
+	justify-content:space-between;
 	align-items:center;
 	color: white;
-	background-color: #1B59C6; 
-}
-
-footer h2 {
-	font-family: 'Jura', sans-serif;
-	font-size: 2em;
-}
-
-article { 
-	/*background: url('http://www.crimea.edu/diz/images/gerb-tnu.jpg') no-repeat bottom right;
-	background-size: 50%;*/
-}
-
-footer .bottom-logo {
-	display: inline-block;
-	margin-left: 2em;
+	z-index: 600;
+	position: relative;
+	background-color: #1C2029; 
 }
 
 footer .bottom-links {
 	display: inline-block;
-	margin: 1em 0em 1em 2.5em;
+	margin: 1em 0em 1em 2em;
 	font-family: 'PT Sans Narrow', sans-serif;
 	font-size: 0.8em;
 }
@@ -277,16 +289,23 @@ footer .bottom-links a {
 	margin-bottom: 0.5em;
 	display: inline-block;
 }
-footer .social a {	width: 32px;
-	height: 32px;
+footer .social {
+	margin-right: 2em;
+	min-width:120px;
 }
+footer .social a {
+	width: 32px;
+	height: 32px;
+	text-decoration: none;
+}
+
 footer .social img {
 	height: 32px;
 	width: 32px;
 	vertical-align: middle;
 	margin: 0em 0.5em 0em 0.5em;
 }
-footer a:hover { 
+footer .bottom-links a:hover { 
 	text-decoration: none;
 	border-bottom: 1px dashed;
 	height: 1.15em;
@@ -309,54 +328,30 @@ footer span {
 	
 }
 #toTop {
--moz-user-select: -moz-none;
-   	-khtml-user-select: none;
-   	-webkit-user-select: none;
-   	-ms-user-select: none;
-   	user-select: none;
-width:100px;
-border:1px dashed #ccc;
-background:#f7f7f7;
-text-align:center;
-padding:5px;
-position:fixed;
-top:15px; /* отступ кнопки от нижнего края страницы*/
-right:15px;
-cursor:pointer;
-display:none;
-color:#333;
-font-family:verdana;
-font-size:11px;
-z-index: 510;
+	width: 68px;
+	height: 100%;
+	text-align: center;
+	padding: 20px 10px 0px 5px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	display: none;
+	color: #333;
+	font-size: 10px;
+	font-family: verdana;
+	font-size: 11px;
+	z-index: 480;
 }
-#report_bug {
-z-index: 520;
--moz-user-select: -moz-none;
-   	-khtml-user-select: none;
-   	-webkit-user-select: none;
-   	-ms-user-select: none;
-   	user-select: none;
-width:400px;
-border:1px dashed #ccc;
-background:#f7f7f7;
-text-align:center;
-padding:5px;
-position:fixed;
-top:2px; /* отступ кнопки от нижнего края страницы*/
-right:50%;
-margin-right: -200px;
-cursor:pointer;
-/*display:none;*/
-color:#333;
-color:red;
-font-family:verdana;
-font-size:11px;
+#toTop:hover {
+	background: rgba(225,231,237,.8);
+	z-index: 510;
 }
 article a[href^="http://"]:not([href*="dmitry.tsapik.tk"])::after, .nav a[href^="http://"]:not([href*="dmitry.tsapik.tk"])::after {
-margin-left: 2px;
-content: url("/images/external.svg");
+	margin-left: 2px;
+	content: url("/images/external.svg");
 }
-article a[href^="https://"]:not([href*="dmitry.tsapik.tk"])::after {
-margin-left: 2px;
-content: url("/images/external.svg");
+article a[href^="https://"]:not([href*="dmitry.tsapik.tk"])::after, .nav a[href^="https://"]:not([href*="dmitry.tsapik.tk"])::after {
+	margin-left: 2px;
+	content: url("/images/external.svg");
 }

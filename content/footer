@@ -1,8 +1,8 @@
-		<div class="bottom-logo"><h2>ФТИ &bull; КФУ</h2></div>
 		<div class="bottom-links">
 			<a href="/p/contacts" target="_blank">Контакты</a>
-			<a href="/p/maps" target="_blank">Схема проезда &amp; Карта кампуса</a>
+			<a href="/p/maps" target="_blank">Площадки размещения ФТИ</a>
 			<a href="/p/feedback" target="_blank">Обратная связь</a>
+			<a href="/p/background" target="_blank">О фоновой картинке</a>
 			<br>&copy; ФТИ ФГАОУ ВО «Крымский федеральный университет имени В.И. Вернадского»<br>
 			проспект Академика Вернадского, 4 | Симферополь, Республика Крым, 295007 | +7 (3652) 60-80-70
 			<span>
@@ -11,7 +11,8 @@
 			</span>
 		</div>
 		<div class="social" style="min-width:120px"> 
-			<!--<a href="https://vk.com/pdtnu"><img src="http://tsapik.tk/vk.png" alt="ВКонтакте"></a>
-			<a href="https://twitter.com/"><img src="http://tsapik.tk/Twitter_logo_blue.png" alt="Twitter"></a>
-			<a href="https://www.facebook.com/"><img src="http://tsapik.tk/FB-f-Logo__blue_29.png" alt="Facebook"></a>-->
+			<a href="https://vk.com/pdtnu"><img src="/images/social/vk_32px.png" alt="ВКонтакте"></a>
+			<a href="https://twitter.com/"><img src="/images/social/twitter_32px.png" alt="Twitter"></a>
+			<a href="https://www.facebook.com/"><img src="/images/social/facebook_32px.png" alt="Facebook"></a>
+			<a href="https://www.instagram.com/phystechcfu"><img src="/images/social/instagram_32px.png" alt="Instagram"></a>
 		</div> 

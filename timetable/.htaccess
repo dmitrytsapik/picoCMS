@@ -1,0 +1,7 @@
+<Files .htpasswd>
+   deny from all
+</Files>
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile /hsphere/local/home/rubass/xn--e1adck2bibfh.xn--p1ai/admin/.htpasswd
+Require valid-user

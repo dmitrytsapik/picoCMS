@@ -26,7 +26,7 @@ sleep(3);
 $url = "http://api.vk.com/method/wall.get?domain=phystech_managers&offset=0&count=1&filter=owner";
 $response = file_get_contents($url);
 $wall = json_decode($response);
-$date = file_get_contents('parser');
+$date = file_get_contents('../content/parser');
 if ($wall->response[1]->date!=$date) {
 $url = "http://api.vk.com/method/wall.get?domain=phystech_managers&offset=0&count=10&filter=owner";
 $response = file_get_contents($url);
@@ -49,12 +49,12 @@ foreach ($wall->response as $key) {
 	}
 	
 }
-file_put_contents("parser", $wall->response[1]->date);
+file_put_contents("../content/parser", $wall->response[1]->date);
 }
 $url = "http://api.vk.com/method/wall.get?domain=physic_studsovet&offset=0&count=1&filter=owner";
 $response = file_get_contents($url);
 $wall = json_decode($response);
-$date = file_get_contents('parser_stud');
+$date = file_get_contents('../content/parser_stud');
 if ($wall->response[1]->date!=$date) {
 $url = "http://api.vk.com/method/wall.get?domain=physic_studsovet&offset=0&count=10&filter=owner";
 $response = file_get_contents($url);
@@ -77,6 +77,6 @@ foreach ($wall->response as $key) {
 	}
 	
 }
-file_put_contents("parser_stud", $wall->response[1]->date);
+file_put_contents("../content/parser_stud", $wall->response[1]->date);
 }
 ?>

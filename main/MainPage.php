@@ -1,13 +1,15 @@
 <?php
 class MainPage extends Page_Template
 {
-    protected function do_events($dir_event) {
+    protected function do_events($dir_event, $total_news) {
     $files = $this->files_list($dir_event);
+    $count_news=0;
     foreach($files as $event) { 
        if (!file_exists($dir_event . $event)) continue;
             $counter = 0;
             $handle = fopen($dir_event . $event, "r");
             if ($handle) {
+                $count_news++;
                 echo "<div class=\"event\">\n";
                 while (($buffer = fgets($handle)) !== false) {
                 switch ($counter) {
@@ -28,6 +30,8 @@ class MainPage extends Page_Template
                 }*/
                 fclose($handle);
                 echo "</div>\n</div>\n";
+                //ограничитель новостей
+                if($count_news>=$total_news) break;
             }
             }
     }
@@ -91,28 +95,39 @@ class MainPage extends Page_Template
                 echo "</div>\n";
             }
     }
-    protected function header_picture() {
+    /*protected function header_picture() {
         return "<div id=\"picture\">\n"
                 . file_get_contents('content/header') .
                "</div>\n";
-    }
+    }*/
     public function make() {
-        $this->Header_Page();
-        echo $this->header_picture();
-        echo "<div class=\"events\">";
-            $loc_dir = array(array("annonce", "Анонс"), array("news", "Новости кафедр"), array("news_deps", "Объявления"));
+        $this->Header_Page("Физико-технический институт КФУ им. В. И. Вернадского");
+        echo "<div id=\"picture\">\n"
+                . file_get_contents('content/header');
+                $loc_dir = array(array("annonce", "события"), array("news_deps", "новости"));
             foreach ($loc_dir as $category) {
                 echo "\n<div class=\"" . $category[0] . "\">
                       \n<h2>" . $category[1] ."</h2>";
-                      $this->do_events("content/". $category[0] ."/");
+                      $this->do_events("content/". $category[0] ."/", 12); //12 новостей
                 echo "</div>";
             }
-            echo "</div>\n";
+        echo "</div>\n";
+        //echo $this->header_picture();
+        /*echo "<div class=\"events\">";
+            //$loc_dir = array(array("annonce", "Анонс"), array("news", "Новости кафедр"), array("news_deps", "Объявления"));
+            $loc_dir = array(array("annonce", "События"), array("news_deps", "Объявления"));
+            foreach ($loc_dir as $category) {
+                echo "\n<div class=\"" . $category[0] . "\">
+                      \n<h2>" . $category[1] ."</h2>";
+                      $this->do_events("content/". $category[0] ."/", 12); //12 новостей
+                echo "</div>";
+            }
+            echo "</div>\n";*/
             /*echo "<h2>Новые статьи Физико-технического института</h2>
                     <div class=\"popular\">";
             $this->do_popular();
             echo "</div>";*/
-        $this->youtube();    
+        //$this->youtube();    
         $this->Footer_Page();
     }
 }

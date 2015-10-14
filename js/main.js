@@ -10,17 +10,18 @@ $('#toTop').click(function() {
 		$('body,html').animate({scrollTop:0},400);
 	});
 });
-$(document).ready(function() {
+
+/*$(document).ready(function() {
   $('#report_bug').click(function(){
     if (confirm("Нажимая \"ОК\", Вы разрешаете отправку снимка текущей страницы администраторам сайта Физико-технического института ФГАОУ ВО \"КФУ им. В.И.Вернадского.\"")) {
 			setTimeout("makeIT()", 1000);
 		}
   });
-  $.get("/vk_parser.php", function( data ) {
+  $.get("/vk_parser", function( data ) {
   //$( ".result" ).html( data );
   //alert( "Load was performed." );
 }).delay(100);
-});
+});*/
 function makeIT(){
   html2canvas(document.body, {
 	 onrendered: function(canvas) {

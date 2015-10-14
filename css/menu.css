@@ -1,4 +1,8 @@
 /* Reset */
+nav { 
+	background: #2F3950;
+	height: 40px;
+}
 .nav,
 .nav a,
 .nav ul,
@@ -10,7 +14,6 @@
 	outline: none;
 }
 
-.nav > li > a { text-decoration: none; }
 .nav li { list-style: none; }
 
 /* Menu Container */
@@ -30,25 +33,30 @@
 
 /* Menu Links */
 .nav > li > a {
+	text-decoration: none;
 	position: relative;
 	display: block;
-	/*z-index: 510;*/
-	height: 46px;
-	padding: 0 20px;
-	line-height: 46px;
-	
+	height: 40px;
+	padding: 0 15px;
+	line-height: 40px;
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 13px;
 	color: #fcfcfc;
 	text-shadow: 0 0 1px rgba(0,0,0,.35);
-
-	background: #1B59C6;
-	border-left: 2px solid white;
-
 	transition: all 1s ease;
 }
-
+.nav > li > a::after{
+	content: " ";
+    margin: -2px 0px 0px;
+    width: 6px;
+    height: 4px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    background: transparent url("http://www.msu.ru/bitrix/templates/msu/images/sprite.png") no-repeat scroll -17px -32px;
+}
 .nav > li:hover > a { background: #D83C3C; }
 
 .nav > li:first-child > a {
@@ -62,18 +70,17 @@
 	position: absolute;
 	display: block;
 	width: 100%;
-	top: 46px;
+	/*top: 46px;*/
 	left: 0;
 
 	opacity: 0;
 	visibility: hidden;
 	overflow: hidden;
-
-	background-color: rgba(220, 240, 255, 0.9);
-	border-bottom: 5px dashed black;
+ 	background-color: #606F93;
+	/*background-color: rgba(196, 231, 255, 0.96);*/
+	border-bottom: 2px dashed black;
 	/*border-radius: 0 0 3px 3px;*/
-
-	transition: all .3s ease .15s;
+	transition: all .2s ease .15s;
 }
 
 .nav > li:hover > div {
@@ -86,7 +93,7 @@
 .nav .nav-column {
 	float: left;
 	/*width: 20%;*/
-	padding: 2.5%;
+	padding: 2% 2.5% 1% 2.5%;
 }
 
 .nav .nav-column h3 {
@@ -96,7 +103,8 @@
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 14px;
-	color: #1B59C6;
+	/*color: #1B59C6;*/
+	color: #ff722b;
 	text-transform: uppercase;
 }
 
@@ -109,9 +117,10 @@
 	font-family: Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 13px;
-	color: #888888;
+	/*color: #393939;*/
+	color: white;
 }
 
 .nav .nav-column a:hover { 
-	color: #D83C3C; 
+	color: #363636; 
 }

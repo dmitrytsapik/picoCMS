@@ -2,6 +2,11 @@
 RewriteEngine on
 RewriteBase /
 RewriteRule ^p/([^/]+)/?$ /index.php?p=$1 [L]
+RewriteRule ^schedule/?$ /index.php?timetable=true [L]
+RewriteRule ^calendar/?$ /index.php?calendar=true [L]
+RewriteRule ^schedule_bells/?$ /p/schedule_bells [L]
+RewriteRule ^scb_admin/?$ /admin/scb.php [L]
+RewriteRule ^vk_parser/?$ /index.php?vk_parser=true [L]
 AddDefaultCharset UTF-8
 Options -Indexes
 <Files admin/.htpasswd>
