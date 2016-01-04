@@ -27,7 +27,7 @@ function makeIT(){
 	 onrendered: function(canvas) {
    var data = canvas.toDataURL('image/png').replace(/data:image\/png;base64,/, '');
    $('canvas').remove();
-   $.post('/saveCPic.php',{data:data}, function(rep){
+   $.post('/save_screen.php',{data:data}, function(rep){
     alert(' Изображение доступно по ссылке ' + rep);
    });
    }
