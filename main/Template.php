@@ -2,6 +2,50 @@
 abstract class Page_Template {
     const top_button = "<div id=\"toTop\">&#9650; Наверх</div>";
     const reporting_button = "";// = "<div id=\"report_bug\">Ошибка в отображении сайта? - Жмите сюда!</div>"; 
+    protected function Menu_Read($path) {
+        $lines = file($path);
+        $html = "";
+        $trigger_lines = false;
+        foreach ($lines as $line) {
+            $line = trim($line);
+            switch($line)
+                {
+                    case (strstr($line, '---')):
+                        $line = substr($line, 3);
+                        $caption = strstr($line, ' |', true);
+                        $url = substr(strstr($line, '| '), 2);
+                        $html .= "<a href=\"" . (($url==null)?"#":$url) . "\">" . $caption . "</a>\n";
+                    break;
+    
+                    case (strstr($line, '@')):
+                        $line = substr($line, 1);
+                        $caption = strstr($line, ' %', true);
+                        $s_class = substr(strstr($line, '% '), 2);
+                        $html .= "<h3" . (($s_class==null)?"":" class=\"". $s_class . "\"") . ">" . (($caption==null)?$line:$caption) . "</h3>\n";
+                    break;
+    
+                    case (strstr($line, '#')):
+                        $html .=  "</div>\n<div class=\"nav-column\">\n";
+                    break;
+    
+                    default:
+                        $caption = strstr($line, ' |', true);
+                        $url = substr(strstr($line, '| '), 2);
+                        if($trigger_lines==true) { 
+                            $html .= "</div>\n</div>\n</li>\n";
+                            $trigger_lines = false;
+                        }
+                        $html .= "<li>\n<a href=\"" . (($url==null)?"#":$url) . "\">" . (($caption==null)?$line:$caption) . "</a>\n";
+                        if($url==null) {
+                            $html .= "<div>\n<div class=\"nav-column\">\n";
+                            $trigger_lines = true;
+                        }
+                        if($url) $html .= "</li>";
+                    break;
+                }
+            }
+            return $html;
+    }
     protected function Header_Page($title) {
         echo '<!DOCTYPE html>
               <html>
@@ -20,8 +64,8 @@ abstract class Page_Template {
                 <title>' . $title . '</title>
               </head>';
         echo file_get_contents("main/header.html") .
-             "\n" . file_get_contents("main/menu.html") .
-             "\n   <article>\n";
+             "\n<nav><ul class=\"nav\">" . $this->Menu_Read("content/menu.html") .
+             "\n</ul></nav>\n<article>\n";
     }
     protected function files_list($dir) {
         $files = scandir($dir);
@@ -32,8 +76,9 @@ abstract class Page_Template {
     }
     protected function Footer_Page() {
         $additional_content = self::top_button . self::reporting_button;
-        echo "      </article>\n" .
+        echo "</article>\n<footer>\n" .
         file_get_contents("main/footer.html") .
+        "</footer>" .
         $additional_content .
         "<script src=\"/js/menu.js\"></script>
         <div id=\"sticky\"></div>

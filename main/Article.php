@@ -29,7 +29,7 @@ class ArticlePage extends Page_Template {
             $buffer = file_get_contents($page_out);
             preg_match('{<h1[^>]*>(.*?)</h1>}', $buffer, $title_h1);
             preg_match('{<h2[^>]*>(.*?)</h2>}', $buffer, $title_h2);
-            $this->Header_Page((isset($title_h2[1])? $title_h2[1] . " - " : "") . ((isset($title_h1[1]))? $title_h1[1] . " - " : "") . "ФТИ КФУ им. В.И. Вернадского");
+            $this->Header_Page((isset($title_h2[1])? $title_h2[1] . " - " : "") . ((isset($title_h1[1]))? $title_h1[1] . " - " : "") . WEBSITE_TITLE_SHORT);
             echo "<div class=\"departments\">";
                 if (file_exists($menu) && filesize($menu)>0) {
                     echo "<div class=\"menu\">".

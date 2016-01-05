@@ -1,7 +1,7 @@
 <div class="about-picture">
-	1 Сентября в КФУ<br>
-	<span style="font-size: 0.8em;">Первый учебный день студентов Физико-технического института</span>
+	Закат в Севастополе<br>
+	<span>Фоновая картинка расположена тут: /images/background-image.jpg</span>
 </div>
-<!--<div class="warning">
-	<b style="color: red; font-size: 2.8em;">Тестовый режим!</b><br>актуальная информация на <a href="http://cfuv.ru">сайте университета</a> 
-</div>-->
+<div class="warning">
+	<b>picoCMS</b><br>by Dmitry Tsapik ( <a href="http://tsapik.xyz">tsapik.xyz</a> ) 
+</div>

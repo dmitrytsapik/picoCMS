@@ -101,7 +101,7 @@ class MainPage extends Page_Template
                "</div>\n";
     }*/
     public function make() {
-        $this->Header_Page("Физико-технический институт КФУ им. В. И. Вернадского");
+        $this->Header_Page(WEBSITE_TITLE);
         echo "<div id=\"picture\">\n"
                 . file_get_contents('content/header');
                 $loc_dir = array(array("annonce", "события"), array("news_deps", "новости"));

@@ -164,17 +164,20 @@ article {
 
 article #picture {
 	position: relative;
-	background: url('/images/I8hWnVM3s6Y.jpg') no-repeat;
+	background: url('/images/background-image.jpg') no-repeat;
 	background-size: cover;
+	background-position: center;
 	background-color: black;
 	height: 600px;
 	width: 100%;
 	padding: 0;
 	margin: 0;
 }
+
 article #picture a {
 	color: white;
 }
+
 article #picture > div {
 	background-color: rgba(56, 70, 104, 0.8);
 	position: absolute;
@@ -190,6 +193,11 @@ article #picture > div.about-picture {
 	font-size: 14px;
 	text-align: justify;
 }
+
+article #picture > div.about-picture span {
+	font-size: 0.8em;
+}
+
 article #picture > div.annonce, article #picture > div.news_deps {
 	top: 2em;
 	font: 13px/1.2em Arial,Helvetica,sans-serif;
@@ -214,6 +222,11 @@ article #picture > div.warning {
 	text-align: center;
 	font-size: 0.8em;
 	width: 40%;
+}
+
+article #picture > div.warning b {
+	color: #66FF33;
+	font-size: 2.8em;
 }
 
 .event {

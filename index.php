@@ -3,9 +3,10 @@
         include 'main/vk_parser.php';
         exit;
     }
-    include 'main/Page_Template.php';
-    include 'main/ArticlePage.php';
-    include 'main/MainPage.php';
+    include 'main/config.php';
+    include 'main/Template.php';
+    include 'main/Article.php';
+    include 'main/Main.php';
     include 'main/NotFound.php';
     if (isset($_GET['rend_mail']) && isset($_GET['rend_host_mail'])) {
         $string = $_GET['rend_mail'] . "@" . $_GET['rend_host_mail'];
