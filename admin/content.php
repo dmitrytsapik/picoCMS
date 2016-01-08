@@ -9,13 +9,13 @@ if ($_POST) {
             file_put_contents("../content/keywords", $value);
             break;
         case 'default_header' :
-            file_put_contents("../content/header", $value);
+            file_put_contents("../content/header.html", $value);
             break;
         case 'default_footer' :
             file_put_contents("../content/youtube", $value);
             break;
         case 'footer' :
-            file_put_contents("../content/footer", $value);
+            file_put_contents("../content/footer.html", $value);
             break;
     }
   }
@@ -23,9 +23,9 @@ if ($_POST) {
 }
 $description = htmlspecialchars(file_get_contents("../content/description"));
 $keywords = htmlspecialchars(file_get_contents("../content/keywords"));
-$default_header = htmlspecialchars(file_get_contents("../content/header"));
+$default_header = htmlspecialchars(file_get_contents("../content/header.html"));
 $default_footer = htmlspecialchars(file_get_contents("../content/youtube"));
-$footer = htmlspecialchars(file_get_contents("../content/footer"));
+$footer = htmlspecialchars(file_get_contents("../content/footer.html"));
 ?>
 <h1>Описание сайта</h1>
 <form method="POST">

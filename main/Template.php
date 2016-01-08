@@ -10,18 +10,14 @@ abstract class Page_Template {
             $line = trim($line);
             switch($line)
                 {
-                    case (strstr($line, '---')):
-                        $line = substr($line, 3);
-                        $caption = strstr($line, ' |', true);
-                        $url = substr(strstr($line, '| '), 2);
-                        $html .= "<a href=\"" . (($url==null)?"#":$url) . "\">" . $caption . "</a>\n";
+                    case (strstr($line, '--')):
+                        $line = explode("|", str_replace('--', '', $line));
+                        $html .= "<a href=\"" . ((isset($line[1]))?trim($line[1]):"#") . "\">" . trim($line[0]) . "</a>\n";
                     break;
     
                     case (strstr($line, '@')):
-                        $line = substr($line, 1);
-                        $caption = strstr($line, ' %', true);
-                        $s_class = substr(strstr($line, '% '), 2);
-                        $html .= "<h3" . (($s_class==null)?"":" class=\"". $s_class . "\"") . ">" . (($caption==null)?$line:$caption) . "</h3>\n";
+                        $line = explode("%", str_replace('@', '', $line));
+                        $html .= "<h3" . ((isset($line[1]))?" class=\"". trim($line[1]) . "\"":"") . ">" . trim($line[0]) . "</h3>\n";
                     break;
     
                     case (strstr($line, '#')):
@@ -29,18 +25,17 @@ abstract class Page_Template {
                     break;
     
                     default:
-                        $caption = strstr($line, ' |', true);
-                        $url = substr(strstr($line, '| '), 2);
+                        $line = explode("|", $line);
                         if($trigger_lines==true) { 
                             $html .= "</div>\n</div>\n</li>\n";
                             $trigger_lines = false;
                         }
-                        $html .= "<li>\n<a href=\"" . (($url==null)?"#":$url) . "\">" . (($caption==null)?$line:$caption) . "</a>\n";
-                        if($url==null) {
+                        $html .= "<li>\n<a href=\"" . ((isset($line[1]))?trim($line[1]):"#") . "\">" . trim($line[0]) . "</a>\n";
+                        if(!isset($line[1])) {
                             $html .= "<div>\n<div class=\"nav-column\">\n";
                             $trigger_lines = true;
                         }
-                        if($url) $html .= "</li>";
+                        if(isset($url[1])) $html .= "</li>";
                     break;
                 }
             }
@@ -63,7 +58,7 @@ abstract class Page_Template {
                 <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter8036914 = new Ya.Metrika({ id:8036914, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><!-- /Yandex.Metrika counter -->
                 <title>' . $title . '</title>
               </head>';
-        echo file_get_contents("main/header.html") .
+        echo file_get_contents("content/header.html") .
              "\n<nav><ul class=\"nav\">" . $this->Menu_Read("content/menu.html") .
              "\n</ul></nav>\n<article>\n";
     }
@@ -77,7 +72,7 @@ abstract class Page_Template {
     protected function Footer_Page() {
         $additional_content = self::top_button . self::reporting_button;
         echo "</article>\n<footer>\n" .
-        file_get_contents("main/footer.html") .
+        file_get_contents("content/footer.html") .
         "</footer>" .
         $additional_content .
         "<script src=\"/js/menu.js\"></script>
