@@ -63,7 +63,8 @@ if (isset($_POST['delete'])) {
 		}
 	}
 
-	$loc_dir = array(array("annonce", "Анонс"), array("news", "Новости кафедр"), array("news_deps", "Объявления"), array("popular", "Новые статьи"));
+	//$loc_dir = array(array("annonce", "Анонс"), array("news", "Новости кафедр"), array("news_deps", "Объявления"), array("popular", "Новые статьи"));
+	$loc_dir = array(array("news_deps", "Объявления"));
 	foreach ($loc_dir as $category) {
 		echo $category[1] . ": ";
 		echo "\n<form method=\"POST\">
